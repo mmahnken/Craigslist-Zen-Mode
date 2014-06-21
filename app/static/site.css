@@ -22,10 +22,46 @@ input.custom-button:hover{
     color: #A3060D;
 }
 
-img:hover{
-    opacity: 0.5;
-}
+  
+  .tint {
+    overflow: hidden;
+    float: left;
+    background: blue;
+    margin: 0 20px 20px 0;
+  }
 
+.t1{
+    background: #F567BC;
+ }
+
+  .t2 {
+    background: #A3060D;
+  }
+  
+  .t3 {
+    background: #F5DD19;
+  }
+  
+  .t4 {
+    background: #562652;
+  }
+
+  img {
+    float: left;
+    display: block;
+    -moz-transition: opacity .3s linear;
+    -webkit-transition: opacity .3s linear;
+    -ms-transition: opacity .3s linear;
+    -o-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+  }
+
+    img:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
+
+  
 img:hover span.caption{
     visibility: visible;
 }
@@ -47,5 +83,5 @@ label:hover{
 }
 
 div.input-container {
-    padding-top: 25px;
+    padding: 25px 15px 50px 15px;
 }

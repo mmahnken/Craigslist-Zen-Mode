@@ -19,11 +19,19 @@
     </div>
     <div class="images-container">
         {% if images %}
+            <div class="wrap">
+            {% set i=0 %}
             {% for key in images %}
+                {% if i>4 %}
+                    {% set i=0 %}
+                {% else %}
+                    {% set i = i+1 %}
+                {% endif %}
                 {% for src in images[key]['pics'] %}
-                    <a href={{key}}><img src={{src}}></img></a>
+                    <figure class="tint t{{i}}"><a href={{key}}><img src={{src}}></img></a></figure>
                 {% endfor %}
             {% endfor %}
+            </div>
         {% endif %}
     </div>
 </body>
