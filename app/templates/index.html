@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CL Distraction Free</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/site.css" rel="stylesheet"></link>
+</head>
+<body>
+    <div class="input-container">
+        <p class="caption">craigslist, distraction-free mode</p>
+
+        <form action="/index" method="post">
+            <label for="link">Paste your craigslist search link below.</label><br/>
+            <input name="link" class="custom" type="url"></input>
+            <input class="custom-button" type="submit"></input>
+        </form>
+    </div>
+    <div class="images-container">
+        {% if images %}
+            {% for key in images %}
+                {% for src in images[key]['pics'] %}
+                    <a href={{key}}><img src={{src}}></img></a>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
