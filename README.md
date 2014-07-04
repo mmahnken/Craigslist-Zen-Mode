@@ -16,9 +16,11 @@ In the root directory, run
 and open the url in a browser.
 
 ##How To Use
+0. Lay out yoga mat. Brew green tea.
 1. Conduct a search on the real craiglist, and copy your URL. 
 2. Paste the url into the input box on Craigslist Zen Mode. 
 3. Press submit and wait about 90 seconds. 
-4. Feast your eyes on *all* of the pictures from the listings, with color tints signalling when a new listing begins. 
+4. Feast your eyes on *all* of the pictures from the listings, with color tints signalling when a new listing begins. Click on the picture to be taken to the listing. 
+
 
 
