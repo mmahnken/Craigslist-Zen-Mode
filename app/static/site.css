@@ -49,11 +49,11 @@ input.custom-button:hover{
   img {
     float: left;
     display: block;
-    -moz-transition: opacity .3s linear;
-    -webkit-transition: opacity .3s linear;
-    -ms-transition: opacity .3s linear;
-    -o-transition: opacity .3s linear;
-    transition: opacity .3s linear;
+    -moz-transition: opacity .1s linear;
+    -webkit-transition: opacity .1s linear;
+    -ms-transition: opacity .1s linear;
+    -o-transition: opacity .1s linear;
+    transition: opacity .1s linear;
   }
 
     img:hover {

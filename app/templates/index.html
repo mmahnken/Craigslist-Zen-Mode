@@ -11,9 +11,9 @@
     <div class="input-container">
         <p class="caption">craigslist "zen mode"</p>
 
-        <form action="/index" method="post">
+        <form action="/index" method="post" id='url-form'>
             <label for="link">Paste your craigslist search link below.</label><br/>
-            <input name="link" class="custom" type="url"></input>
+            <input name="link" class="custom" type="url" id='link-input'></input>
             <input class="custom-button" type="submit"></input>
         </form>
     </div>
@@ -35,4 +35,6 @@
         {% endif %}
     </div>
 </body>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src='/static/craig.js'></script>
 </html>
