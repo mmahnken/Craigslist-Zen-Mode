@@ -18,7 +18,7 @@ In order to use this app, you'll have to run it locally, because craiglist block
 
 ### Wait, will I get in trouble?
 
-I been building this project over the course of a year, and have tested it at least 100s of times, and have yet to be blocked or receive nasty messages from craigslist.
+I've been updating this project over the course of a year, and have tested it at least 100s of times, and have yet to be blocked or receive nasty messages from craigslist.
 
 ##Getting Started
 First, you'll want to start a virtual environment and activate it. Then
