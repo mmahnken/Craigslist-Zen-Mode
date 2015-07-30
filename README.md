@@ -1,10 +1,24 @@
-Craigslist-Zen-Mode
-===================
+# Craigslist "Zen Mode"
 
-A solution for people who think that there is too much clicking and reading on craigslist.
+## Demo
 
-This is a flask app. I'm not able to deploy it because craiglist blocks IPs on Heroku and AWS. 
-In order to use this app, you'll have to run it locally. Clone this repo into a directory on your machine.
+First, go to craigslist and conduct your search using the filters you want. Copy the link to that search.
+
+Paste it into this app.
+
+![Demo gif](demo.gif)
+
+Click on a picture to open the actual listing in a new tab.
+
+![See listing](listing.gif)
+
+## Cool, how do I use this?
+
+In order to use this app, you'll have to run it locally, because craiglist blocks most commercial deployment servers. First, clone this repo into a directory on your machine.
+
+### Wait, will I get in trouble?
+
+I been building this project over the course of a year, and have tested it at least 100s of times, and have yet to be blocked or receive nasty messages from craigslist.
 
 ##Getting Started
 First, you'll want to start a virtual environment and activate it. Then

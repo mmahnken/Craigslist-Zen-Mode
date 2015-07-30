@@ -11,8 +11,12 @@ function submitLink(e){
         data: {'link': link},
         datatype: 'json',
         success: function(data){
+            $('#resultsCount').text("0");
+            $('#resultsCountText').text("Results: ");
             var data = JSON.parse(data);
+            console.log( data.list_of_links);
             loadListings(data);
+
         }
     });
 }
@@ -45,6 +49,7 @@ function wrapElem( innerElem, wrapType, wrapperAttrType, wrapperAttr ){
     wrapper.appendChild( innerElem);
     if (wrapType == 'a' && wrapperAttrType == 'href'){
         wrapper.href = wrapperAttr;
+        wrapper.target = '_blank';
     } else if (wrapperAttrType == 'class'){
         wrapper.className = wrapperAttr;
     }
@@ -53,6 +58,8 @@ function wrapElem( innerElem, wrapType, wrapperAttrType, wrapperAttr ){
 }
 
 function putImages(imagesList, urlToPosting, tintCount){
+    var current = $('#resultsCount').text();
+    $('#resultsCount').html(Number(current)+ 1);
     for (idx in imagesList){
         var newImg = document.createElement("img");
         newImg.setAttribute("src", imagesList[idx]);

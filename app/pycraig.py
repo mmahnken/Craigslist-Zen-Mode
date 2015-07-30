@@ -3,6 +3,7 @@ import BeautifulSoup as bs
 import HTMLParser as hp
 import urlparse
 import json
+import datetime
 
 def get_base(link):
     split = urlparse.urlsplit(link)
@@ -35,10 +36,13 @@ def get_images(soup, base_url):
 #for AJAX step 1
 def get_links(link):
     links = []
-    anchors = bs.BeautifulSoup(requests.get(link).text).\
-        find('div', {'class': 'content'}).\
+    all_links = bs.BeautifulSoup(requests.get(link).text).\
         findAll('a')
-    links.extend(a['href'] for a in anchors if a.has_key('href'))
+    # links.extend(link['href'] for link in all_links if link.has_key('href') and link not in links)
+    for l in all_links:
+        if l.has_key('href') and l['href'] not in links and l['href'][0] != '//':
+            print l['href']
+            links.append(l['href'])
     base_url = get_base(link)
     return json.dumps({'list_of_links': links, 'base_url': base_url})
 
@@ -51,6 +55,15 @@ def get_one_listing(link):
         images = [a_link['href'] for a_link in more_soup.find('div', {'id':'thumbs'}).findAll('a')]
     except:
         print "Not a link"
+        print link
+    print images
     return json.dumps({'images':images, 'postingUrl':link})
+
+
+
+
+
+
+
 
 
