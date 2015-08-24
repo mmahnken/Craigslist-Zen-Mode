@@ -4,10 +4,12 @@ import HTMLParser as hp
 import urlparse
 import json
 import datetime
+import mapping_helpers
 
 def get_base(link):
     split = urlparse.urlsplit(link)
     return split[0]+'://'+split[1]
+
 
 def get_soup(link):
     soup = bs.BeautifulSoup(requests.get(link).text).\
@@ -16,9 +18,11 @@ def get_soup(link):
     base_url = get_base(link)
     return soup, base_url
 
+
 def parse_title(title):
     parser = hp.HTMLParser()
     return parser.unescape(title)
+
 
 # slow
 def get_images(soup, base_url):
@@ -32,6 +36,7 @@ def get_images(soup, base_url):
         except:
             print "Not a link"
     return images
+
 
 #for AJAX step 1
 def get_links(link):
@@ -52,18 +57,15 @@ def get_one_listing(link):
     images = []
     try:
         more_soup = bs.BeautifulSoup(requests.get(link).text)
-        images = [a_link['href'] for a_link in more_soup.find('div', {'id':'thumbs'}).findAll('a')]
+        images = [a_link['href'] for a_link in more_soup.find('div', {'id': 'thumbs'}).findAll('a')]
     except:
-        print "Not a link"
-        print link
-    print images
-    return json.dumps({'images':images, 'postingUrl':link})
+        raise Exception('Not a listing with images.')
+        return None
+    try:
+        maps = more_soup.find('p', {'class': 'mapaddress'}).findAll('a')
+        latlng = mapping_helpers.get_lat_longs(maps[0]['href'])
+    except:
+        raise Exception('No map on this listing.')
+        latlng = None
 
-
-
-
-
-
-
-
-
+    return json.dumps({'images': images, 'postingUrl': link, 'latlng': latlng})

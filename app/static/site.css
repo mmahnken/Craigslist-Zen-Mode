@@ -1,17 +1,13 @@
 input.custom {
-    padding: 15px;
     outline: none;
     box-shadow: none;
     border: none;
     background-color: #FFF;
-    font-size: 20px;
     font-family: Helvetica;
-    width: 20em;
     color: #000;
 }
 
 input.custom-button {
-    font-size: 18px;
     font-family: monospace;
     color: #F567BC;
     border-radius: none;
@@ -21,6 +17,7 @@ input.custom-button {
 }
 input.custom-button:hover{
     color: #A3060D;
+    background-color: #F567BC;
 }
 
   
@@ -70,12 +67,10 @@ img:hover span.caption{
 .caption {
     color: #A3060D;
     font-family: monospace;
-    font-size: 20px;
 }
 
 label{
     font-family: monospace;
-    font-size: 18px;
     color: #A3060D;
 }
 
@@ -83,6 +78,7 @@ label:hover{
     color:#F567BC;
 }
 
-div.input-container {
-    padding: 25px 15px 50px 15px;
+div#map {
+    height: 9em;
+    width: 15em;
 }

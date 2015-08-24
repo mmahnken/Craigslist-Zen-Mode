@@ -5,39 +5,51 @@
     <meta charset="utf-8">
     <title>Craigslist Zen Mode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="/static/site.css" rel="stylesheet"></link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="input-container">
-        <p class="caption">craigslist "zen mode"</p>
 
-        <form action="/index" method="post" id='url-form'>
-            <label for="link">Paste your craigslist search link below.</label><br/>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header caption">craigslist "zen mode"</div>
+    <form role="search"class="navbar-form navbar-left" action="/index" method="post" id='url-form'>
+        <div class="form-group">
+            <label for="link">craigslist search link</label>
             <input name="link" class="custom" type="url" id='link-input'></input>
-            <input class="custom-button" type="submit"></input>
-        </form>
-    </div>
-    <div>
-        <span id="resultsCountText" class="caption"></span> <span class="caption" id="resultsCount"></span>
-    </div>
-    <div class="images-container">
-        {% if images %}
-            <div class="wrap">
-            {% set i=0 %}
-            {% for key in images %}
-                {% if i>4 %}
-                    {% set i=0 %}
-                {% else %}
-                    {% set i = i+1 %}
-                {% endif %}
-                {% for src in images[key]['pics'] %}
-                    <figure class="tint t{{i}}"><a href={{key}}><img src={{src}}></img></a></figure>
-                {% endfor %}
+        </div>
+        <input class="custom-button" type="submit"></input>
+    </form>
+    <ul class="nav navbar-nav">
+        <li>
+            <span id="resultsCountText" class="caption"></span> <span class="caption" id="resultsCount"></span>
+        </li>
+    </ul>
+    <div id="map"></div>
+  </div>
+</nav>
+
+<div class="images-container">
+    {% if images %}
+        <div class="wrap">
+        {% set i=0 %}
+        {% for key in images %}
+            {% if i>4 %}
+                {% set i=0 %}
+            {% else %}
+                {% set i = i+1 %}
+            {% endif %}
+            {% for src in images[key]['pics'] %}
+                <figure class="tint t{{i}}"><a href={{key}}><img src={{src}}></img></a></figure>
             {% endfor %}
-            </div>
-        {% endif %}
-    </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+</div>
 </body>
 <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQTwdiY1LBAVpcBfdXkB4Ch0LKEeg5gIg"
+  type="text/javascript"></script>
 <script src='/static/craig.js'></script>
 </html>
