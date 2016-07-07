@@ -3,21 +3,21 @@ input.custom {
     box-shadow: none;
     border: none;
     background-color: #FFF;
-    font-family: Helvetica;
+    font-family: 'PT Sans', sans-serif;
     color: #000;
 }
 
 input.custom-button {
-    font-family: monospace;
-    color: #F567BC;
+    font-family: 'PT Sans', sans-serif;
+    color: #FFF;
     border-radius: none;
     border: none;
     cursor: pointer;
-    background-color: #FFF;
+    background-color: #579AB5;
 }
 input.custom-button:hover{
-    color: #A3060D;
-    background-color: #F567BC;
+    color: white;
+    background-color: #94E0FF;
 }
 
   
@@ -66,11 +66,11 @@ img:hover span.caption{
 
 .caption {
     color: #A3060D;
-    font-family: monospace;
+    font-family: 'PT Sans', sans-serif;
 }
 
 label{
-    font-family: monospace;
+    font-family: 'PT Sans', sans-serif;
     color: #A3060D;
 }
 
