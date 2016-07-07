@@ -78,7 +78,28 @@ label:hover{
     color:#F567BC;
 }
 
-div#map {
-    height: 9em;
-    width: 15em;
+div#map-container{
+  /*height:10em;*/
+  /*position: fixed;*/
 }
+
+div#map {
+  height:13em;
+  /*position:fixed;*/
+  /*width:5em;*/
+}
+
+div#images-container {
+  /*top: 5em;*/
+  overflow:auto;
+  height: 600px;
+}
+
+input[type=submit]:focus {outline:0;}
+
+body{
+  padding: 0px;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+

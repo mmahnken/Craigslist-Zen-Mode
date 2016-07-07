@@ -46,8 +46,9 @@ def get_links(link):
     # links.extend(link['href'] for link in all_links if link.has_key('href') and link not in links)
     for l in all_links:
         if l.has_key('href') and l['href'] not in links and l['href'][0] != '//':
-            print l['href']
-            links.append(l['href'])
+            if 'search' not in l['href'] and '.org' not in l['href'] and 'about' not in l['href'] and '/' in l['href']:
+                print 'DEBUG %s' % l['href']
+                links.append(l['href'])
     base_url = get_base(link)
     return json.dumps({'list_of_links': links, 'base_url': base_url})
 
